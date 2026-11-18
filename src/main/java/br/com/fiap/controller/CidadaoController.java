@@ -29,7 +29,6 @@ public class CidadaoController {
     private ModelMapper modelMapper = new ModelMapper();
 
     public CidadaoController() {
-        // STRICT: só copia campos com nome idêntico
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
     }
 

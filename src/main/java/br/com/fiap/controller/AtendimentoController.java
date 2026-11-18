@@ -28,7 +28,6 @@ public class AtendimentoController {
     private ModelMapper modelMapper = new ModelMapper();
 
     public AtendimentoController() {
-        // STRICT: evita confundir id com idServico, idUnidade e idCidadao
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
     }
 

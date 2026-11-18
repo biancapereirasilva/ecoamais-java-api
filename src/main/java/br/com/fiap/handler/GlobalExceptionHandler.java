@@ -55,7 +55,7 @@ public class GlobalExceptionHandler {
                 "Não foi possível ler os dados enviados. Confira os campos e o formato da data (aaaa-mm-ddThh:mm:ss)."));
     }
 
-    // 400: código da rota que não é número (ex.: /servicos/abc)
+    // 400: código da rota que não é número
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErroResposta> tratarTipoInvalido(MethodArgumentTypeMismatchException e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErroResposta(

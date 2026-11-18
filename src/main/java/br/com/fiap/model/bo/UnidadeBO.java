@@ -13,7 +13,6 @@ public class UnidadeBO {
     private UnidadeDAO unidadeDAO;
     private AtendimentoDAO atendimentoDAO;
 
-    // servicoId opcional: com ele, devolve só as unidades que oferecem o serviço
     public ArrayList<Unidade> findAll(Long servicoId) {
         unidadeDAO = new UnidadeDAO();
         if (servicoId != null) {

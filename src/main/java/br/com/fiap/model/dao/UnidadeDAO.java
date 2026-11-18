@@ -78,7 +78,6 @@ public class UnidadeDAO {
         return unidades;
     }
 
-    // Regra de negócio: a unidade precisa oferecer o serviço escolhido no atendimento
     public boolean existsServicoNaUnidade(Long idUnidade, Long idServico) {
         String sql = "select 1 from tb_servico_unidade where cd_unidade = ? and cd_servico = ?";
         try (PreparedStatement ps = ConnectionFactory.getConnection().prepareStatement(sql)) {

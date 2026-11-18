@@ -29,7 +29,6 @@ public class ServicoController {
     private ModelMapper modelMapper = new ModelMapper();
 
     public ServicoController() {
-        // STRICT: só copia campos com nome idêntico
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
     }
 

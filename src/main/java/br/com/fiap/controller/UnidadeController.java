@@ -30,11 +30,9 @@ public class UnidadeController {
     private ModelMapper modelMapper = new ModelMapper();
 
     public UnidadeController() {
-        // STRICT: só copia campos com nome idêntico
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
     }
 
-    // GET /unidades ou GET /unidades?servicoId=1 (só as unidades que oferecem o serviço)
     @GetMapping
     public ResponseEntity<ArrayList<UnidadeResponse>> findAll(@RequestParam(required = false) Long servicoId) {
         ArrayList<UnidadeResponse> unidades = new ArrayList<>();

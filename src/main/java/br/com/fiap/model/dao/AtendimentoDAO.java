@@ -82,12 +82,10 @@ public class AtendimentoDAO {
         return atendimentos;
     }
 
-    // Regra de negócio: só um atendimento por horário em cada unidade (cancelado libera o horário)
     public boolean existsByUnidadeAndDataHora(Long idUnidade, LocalDateTime dataHora) {
         return existsByUnidadeAndDataHoraExceto(idUnidade, dataHora, null);
     }
 
-    // Igual ao anterior, mas ignora um atendimento (usado no PUT para não conflitar consigo mesmo)
     public boolean existsByUnidadeAndDataHoraExceto(Long idUnidade, LocalDateTime dataHora, Long idIgnorado) {
         String sql = "select 1 from tb_atendimento where cd_unidade = ? and dt_hora = ? "
                 + "and ds_status <> 'CANCELADO' and cd_atendimento <> ? and rownum = 1";
@@ -103,7 +101,6 @@ public class AtendimentoDAO {
         }
     }
 
-    // Regra de negócio: cidadão com atendimentos não pode ser excluído
     public boolean existsByCidadao(Long idCidadao) {
         String sql = "select 1 from tb_atendimento where cd_cidadao = ? and rownum = 1";
         try (PreparedStatement ps = ConnectionFactory.getConnection().prepareStatement(sql)) {
@@ -116,7 +113,6 @@ public class AtendimentoDAO {
         }
     }
 
-    // Regra de negócio: serviço com atendimentos não pode ser excluído
     public boolean existsByServico(Long idServico) {
         String sql = "select 1 from tb_atendimento where cd_servico = ? and rownum = 1";
         try (PreparedStatement ps = ConnectionFactory.getConnection().prepareStatement(sql)) {
@@ -129,7 +125,6 @@ public class AtendimentoDAO {
         }
     }
 
-    // Regra de negócio: unidade com atendimentos não pode ser excluída
     public boolean existsByUnidade(Long idUnidade) {
         String sql = "select 1 from tb_atendimento where cd_unidade = ? and rownum = 1";
         try (PreparedStatement ps = ConnectionFactory.getConnection().prepareStatement(sql)) {
