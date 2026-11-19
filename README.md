@@ -3,7 +3,7 @@
 API RESTful do **Ecoa+**, plataforma de agendamento de serviços públicos pensada para ser acessível (pictogramas, linguagem simples e lista de documentos de cada serviço). Projeto da **Global Solution 2026/2 — CitizenTech**, FIAP.
 
 - **API publicada:** https://ecoamais-api.onrender.com/servicos
-- **Vídeo de demonstração:** _(colar o link do vídeo)_
+- **Vídeo de demonstração:** https://www.youtube.com/watch?v=lrDCqrXxn-0
 - **Stack:** Java 21, Spring Boot, Maven, JDBC puro (sem JPA), Oracle FIAP, Docker e Render
 
 ## Integrantes
